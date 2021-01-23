@@ -6,13 +6,10 @@ import Start from '../Start/Start';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
-import Comments from '../Comments/Comments'
+import Comments from '../Comments/Comments';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 function App() {
-
-
-
-
 
 
 
@@ -29,6 +26,7 @@ function App() {
           <Link to="/understanding">understanding--</Link>
           <Link to="/support">support--</Link>
           <Link to="/comments">comments--</Link>
+          <Link to='/reviewFeedback'>ReviewFeedback</Link>
         </nav>
         <div>
 
@@ -37,6 +35,7 @@ function App() {
           <Route path='/understanding' component={Understanding} />
           <Route path='/support' component={Support} />
           <Route path='/comments' component={Comments} />
+          <Route path='/reviewFeedback' component={ReviewFeedback} />
 
         </div>
       </div>
