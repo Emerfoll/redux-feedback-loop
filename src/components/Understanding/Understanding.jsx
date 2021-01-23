@@ -22,7 +22,8 @@ function Understanding(params) {
             <h1>Understanding</h1>
             <form onSubmit={nextSection}>
                 <input
-                    type="text"
+                    required
+                    type="number"
                     placeholder="Feedback"
                     onChange={(event) => setUnderstanding(event.target.value)}
                     value={understanding}

@@ -22,7 +22,8 @@ function Feeling(params) {
             <h1>Feeling</h1>
             <form onSubmit={nextSection}>
                 <input
-                    type="text"
+                    required
+                    type="number"
                     placeholder="Feedback"
                     onChange={(event) => setFeeling(event.target.value)}
                     value={feeling}

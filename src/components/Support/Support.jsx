@@ -21,7 +21,8 @@ function Support(params) {
             <h1>Support</h1>
             <form onSubmit={nextSection}>
                 <input
-                    type="text"
+                    required
+                    type="number"
                     placeholder="Feedback"
                     onChange={(event) => setSupport(event.target.value)}
                     value={support}

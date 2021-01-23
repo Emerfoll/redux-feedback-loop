@@ -23,7 +23,7 @@ function Comments(params) {
             <form onSubmit={nextSection}>
                 <input
                     type="text"
-                    placeholder="Feedback"
+                    placeholder="Optional"
                     onChange={(event) => setComments(event.target.value)}
                     value={comments}
                 />
