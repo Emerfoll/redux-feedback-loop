@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Start from '../Start/Start';
@@ -8,7 +7,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
-import { AppBar, Breadcrumbs, Typography } from '@material-ui/core'
+import Admin from '../Admin/Admin'
 
 function App() {
 
@@ -33,7 +32,7 @@ function App() {
           <Route path='/support' component={Support} />
           <Route path='/comments' component={Comments} />
           <Route path='/reviewFeedback' component={ReviewFeedback} />
-
+          <Route path='/admin' component={Admin} />
         </div>
       </div>
     </Router>
