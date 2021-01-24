@@ -19,7 +19,7 @@ function Start(params) {
     return (
         <div>
             <h1>Start Feedback</h1>
-            <button onClick={startClick}>Start Feedback</button>
+            <button className="nextBtn" onClick={startClick}>Start Feedback</button>
         </div>
     )
 }

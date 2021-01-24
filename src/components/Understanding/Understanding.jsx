@@ -16,7 +16,7 @@ function Understanding(params) {
     const nextSection = () => {
         console.log('Next clicked');
 
-        dispatch({ type: 'FEEDBACK_ENTRY', payload: understanding })
+        dispatch({ type: 'UNDERSTANDING_FEEDBACK_ENTRY', payload: understanding })
         history.push('/support')
     }
 

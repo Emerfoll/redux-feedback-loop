@@ -15,7 +15,7 @@ function Comments(params) {
     const nextSection = () => {
         console.log('Next clicked');
 
-        dispatch({ type: 'FEEDBACK_ENTRY', payload: comments })
+        dispatch({ type: 'COMMENTS_FEEDBACK_ENTRY', payload: comments })
         history.push('/reviewFeedback')
     }
 

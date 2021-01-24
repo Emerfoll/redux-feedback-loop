@@ -14,7 +14,7 @@ function Support(params) {
     const nextSection = () => {
         console.log('Next clicked');
 
-        dispatch({ type: 'FEEDBACK_ENTRY', payload: support })
+        dispatch({ type: 'SUPPORT_FEEDBACK_ENTRY', payload: support })
         history.push('/comments')
     }
 

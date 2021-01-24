@@ -11,7 +11,7 @@ function ReviewFeedback(params) {
     const history = useHistory();
 
     const review = useSelector(store => store.feedbackReducer)
-
+    console.log(review);
 
     const submitFeedback = () => {
         console.log('Feedback Submitted!');
@@ -57,10 +57,10 @@ function ReviewFeedback(params) {
         <>
             <h1>ReviewFeedback</h1>
 
-            <p>Feelings: {review[0]}</p>
-            <p>Understanding: {review[1]}</p>
-            <p>Support: {review[2]}</p>
-            <p>Comments: {review[3]}</p>
+            <p>Feelings: {review.feeling}</p>
+            <p>Understanding: {review.understanding}</p>
+            <p>Support: {review.support}</p>
+            <p>Comments: {review.comments}</p>
 
             <button 
                 type="submit" 

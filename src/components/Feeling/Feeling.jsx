@@ -10,12 +10,12 @@ function Feeling(params) {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const [feeling, setFeeling] = useState('')
+    const [feeling, setFeeling] = useState({})
 
     const nextSection = () => {
         console.log('Next clicked');
 
-        dispatch({ type: 'FEEDBACK_ENTRY', payload: feeling })
+        dispatch({ type: 'FEELING_FEEDBACK_ENTRY', payload: feeling })
         history.push('/understanding')
     }
 

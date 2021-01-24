@@ -3,14 +3,14 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.post('/', (req, res) => {
-    console.log(req.body); // [ '5', '5', '5', 'asdfghjkl;' ]
+    console.log(req.body); // {feeling: '10', understanding: '10', support: '10', comments: 'Comment' }
     let feedback = req.body
+
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES ($1, $2, $3, $4);`;
-    
-    
+        
     console.log('Posting feedback');
-    pool.query(queryText, [feedback[0], feedback[1], feedback[2], feedback[3]]).then((response) => {
+    pool.query(queryText, [feedback.feeling, feedback.understanding, feedback.support, feedback.comments]).then((response) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log('Error POST /feedback', error)

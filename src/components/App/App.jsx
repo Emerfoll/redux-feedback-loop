@@ -8,6 +8,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import { AppBar } from '@material-ui/core'
 
 function App() {
 
@@ -20,14 +21,14 @@ function App() {
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
         </header>
-        <nav>
-          <Link to="/">Start--</Link>
-          <Link to="/feeling">feeling--</Link>
-          <Link to="/understanding">understanding--</Link>
-          <Link to="/support">support--</Link>
-          <Link to="/comments">comments--</Link>
+        <AppBar position="static" className="appBar">
+          <Link to="/">Start</Link>
+          <Link to="/feeling">feeling</Link>
+          <Link to="/understanding">understanding</Link>
+          <Link to="/support">support</Link>
+          <Link to="/comments">comments</Link>
           <Link to='/reviewFeedback'>ReviewFeedback</Link>
-        </nav>
+        </AppBar>
         <div>
 
           <Route path='/' exact component={Start} />
