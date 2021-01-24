@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import NavBar from '../NavBar/NavBar'
+import Swal from "sweetalert2";
 
 
 function Admin() {
@@ -27,7 +28,27 @@ function Admin() {
         })
     }
 
-    
+    const deleteButton = (feedbackToDelete) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                handleDelete(feedbackToDelete)
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
+    }
+
     const handleDelete = (feedbackToDelete) => {
         console.log('Deleting feedback', feedbackToDelete);
         let id = feedbackToDelete.id
@@ -68,7 +89,7 @@ function Admin() {
                                 <TableCell align="center">{feedback.understanding}</TableCell>
                                 <TableCell align="center">{feedback.support}</TableCell>
                                 <TableCell align="center">{feedback.comments}</TableCell>
-                                <TableCell align="right"><button onClick={() => handleDelete(feedback)}>Delete</button></TableCell>
+                                <TableCell align="right"><button onClick={() => deleteButton(feedback)}>Delete</button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
