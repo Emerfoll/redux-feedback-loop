@@ -8,16 +8,11 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 
-const feedbackReducer = (state = {
-    feeling: 0,
-    understanding: 0,
-    support: 0,
-    comments: 'comments'
-}, action) => {
+const feedbackReducer = (state = {}, action) => {
     switch (action.type) {
         case 'NEW_FEEDBACK':
             return {
-                feeling: 0,
+                feeling: null,
                 understanding: 0,
                 support: 0,
                 comments: 'comments'

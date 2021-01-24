@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import NavBar from '../NavBar/NavBar';
 
 
 function Comments(params) {
@@ -21,6 +22,7 @@ function Comments(params) {
 
     return (
         <>
+        <NavBar />
             <h1>Would you like to leave us a comments</h1>
             <form onSubmit={nextSection}>
                 <TextField
@@ -29,10 +31,10 @@ function Comments(params) {
                     onChange={(event) => setComments(event.target.value)}
                     value={comments}
                 />
-                <button 
-                type="submit" 
-                variant="contained" 
-                className="nextBtn" 
+                <button
+                    type="submit"
+                    variant="contained"
+                    className="nextBtn"
                 >Next</button>
             </form>
         </>

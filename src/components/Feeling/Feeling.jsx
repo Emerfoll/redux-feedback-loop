@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import NavBar from '../NavBar/NavBar';
 
 function Feeling(params) {
 
@@ -21,9 +22,11 @@ function Feeling(params) {
 
     return (
         <>
+        <NavBar />
             <h1>How are you feeling today?</h1>
             <form onSubmit={nextSection}>
                 <TextField
+                    required
                     id="standard-number"
                     label="1 - 10"
                     type="number"

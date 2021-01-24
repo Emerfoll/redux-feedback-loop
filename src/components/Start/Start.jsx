@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
+import NavBar from '../NavBar/NavBar';
 
 
 function Start(params) {
@@ -18,6 +18,7 @@ function Start(params) {
 
     return (
         <div>
+            <NavBar />
             <h1>Start Feedback</h1>
             <button className="nextBtn" onClick={startClick}>Start Feedback</button>
         </div>

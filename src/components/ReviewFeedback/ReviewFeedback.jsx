@@ -2,6 +2,7 @@ import axios from "axios";
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { Button } from '@material-ui/core';
+import NavBar from '../NavBar/NavBar';
 
 
 
@@ -55,6 +56,7 @@ function ReviewFeedback(params) {
 
     return (
         <>
+            <NavBar />
             <h1>ReviewFeedback</h1>
 
             <p>Feelings: {review.feeling}</p>

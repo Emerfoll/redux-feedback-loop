@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import NavBar from '../NavBar/NavBar';
 
 function Support(params) {
 
@@ -20,19 +21,21 @@ function Support(params) {
 
     return (
         <>
+        <NavBar />
             <h1>How well are you being support?</h1>
             <form onSubmit={nextSection}>
-            <TextField
+                <TextField
+                    required
                     id="standard-number"
                     label="1 - 10"
                     type="number"
                     onChange={(event) => setSupport(event.target.value)}
                     value={support}
                 />
-                <button 
-                type="submit" 
-                variant="contained" 
-                className="nextBtn" 
+                <button
+                    type="submit"
+                    variant="contained"
+                    className="nextBtn"
                 >Next</button>
             </form>
         </>
