@@ -3,7 +3,8 @@
 }
 
 .App-header {
-  background-color: #033076;
+  /* background-color: #033076; */
+  background-color: blueviolet;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -37,6 +38,16 @@ h4 {
   transform: translate(-50%, 35%);
   color: aliceblue;
   background-color: blueviolet;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 9px;
+}
+
+.deleteBtn {
+  color: aliceblue;
+  background-color: crimson;
   padding-right: 25px;
   padding-left: 25px;
   padding-top: 10px;

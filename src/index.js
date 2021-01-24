@@ -7,7 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
+// reducer that grabs the info from each page of the feedback and puts it into the object to return.
 const feedbackReducer = (state = {}, action) => {
     switch (action.type) {
         case 'NEW_FEEDBACK':
@@ -35,7 +35,7 @@ const feedbackReducer = (state = {}, action) => {
 
 
 
-
+// creates a store of the reducers so they can be used on other pages
 const reduxStore = createStore(
     combineReducers({
         feedbackReducer

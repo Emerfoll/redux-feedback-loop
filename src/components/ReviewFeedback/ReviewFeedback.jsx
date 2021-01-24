@@ -8,26 +8,30 @@ import NavBar from '../NavBar/NavBar';
 
 function ReviewFeedback(params) {
 
+    // Variables to be used later
     const Swal = require('sweetalert2')
     const history = useHistory();
 
     const review = useSelector(store => store.feedbackReducer)
     console.log(review);
 
+    // This is the function that runs when the submit feedback button is clicked.
     const submitFeedback = () => {
         console.log('Feedback Submitted!');
-        console.log(review);
 
+        // request to submit the data entered to the database
         axios.post('/feedback', review).then((response) => {
             console.log(response);
         }).catch((err) => {
             console.log(err);
         });
+        // Sweet alert that lets the user know their info was submitted. Then sends them to the starting page.
         let timerInterval
         Swal.fire({
             title: 'Thank you, your feedback has been submitted!',
             html: 'Returning to start.',
-            timer: 3500,
+            // How long the pop up stays till the user is redirected to the start page.
+            timer: 2500,
             timerProgressBar: true,
             didOpen: () => {
                 Swal.showLoading()
@@ -59,11 +63,13 @@ function ReviewFeedback(params) {
             <NavBar />
             <h1>ReviewFeedback</h1>
 
+            {/* displays the info that the user has entered so it can be reviewed before submitting. */}
             <p>Feelings: {review.feeling}</p>
             <p>Understanding: {review.understanding}</p>
             <p>Support: {review.support}</p>
             <p>Comments: {review.comments}</p>
 
+            {/* clicking this button submits the info to the database */}
             <button 
                 type="submit" 
                 variant="contained" 

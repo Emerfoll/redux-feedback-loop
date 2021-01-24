@@ -11,11 +11,6 @@ import Admin from '../Admin/Admin'
 
 function App() {
 
-  const handleClick = () => {
-    console.log('clicked');
-  }
-
-
   return (
     <Router>
       <div className='App'>
@@ -24,8 +19,8 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
 
+        {/* Routs to point to each page */}
         <div>
-
           <Route path='/' exact component={Start} />
           <Route path='/feeling' component={Feeling} />
           <Route path='/understanding' component={Understanding} />

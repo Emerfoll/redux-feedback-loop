@@ -16,18 +16,21 @@ function Admin() {
 
     useEffect(() => getFeedback(), [])
 
-
+    // Creates a variable that starts as an empty array to be used by the getFeedback
     const [tableData, setTableData] = useState([]);
 
     const getFeedback = () => {
         console.log('Getting feedback');
 
+        // GETs the data from the database to populate the table.
         axios.get('/feedback').then((response) => {
             console.log(response.data);
+            // Sets the variable for the table data
             setTableData(response.data);
         })
-    }
+    } // END getFeedback
 
+    // handles the click on the delete button using sweet alert 2
     const deleteButton = (feedbackToDelete) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -37,8 +40,10 @@ function Admin() {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
+            // checks if the yes or no button was deleted
           }).then((result) => {
             if (result.isConfirmed) {
+                // if yes is clicked, it sends the info over to handleDelete and runs the function.
                 handleDelete(feedbackToDelete)
               Swal.fire(
                 'Deleted!',
@@ -49,11 +54,13 @@ function Admin() {
           })
     }
 
+    // function is ran if the yes on the sweet alert is clicked. 
     const handleDelete = (feedbackToDelete) => {
         console.log('Deleting feedback', feedbackToDelete);
         let id = feedbackToDelete.id
         console.log(id);
 
+        // delete request to remove the feedback from the database based on the id of the feedback.
         axios.delete(`/feedback/${id}`).then((response) => {
             console.log(response);
             getFeedback();
@@ -71,6 +78,7 @@ function Admin() {
         <>
             <NavBar />
 
+            {/* table to display the info from the server. */}
             <TableContainer component={Paper}>
                 <Table aria-label="simple table">
                     <TableHead>
@@ -83,13 +91,14 @@ function Admin() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
+                        {/* Maps through the info from the server and displays if on the DOM. */}
                         {tableData.map((feedback) => (
                             <TableRow key={feedback.id}>
                                 <TableCell align="center">{feedback.feeling}</TableCell>
                                 <TableCell align="center">{feedback.understanding}</TableCell>
                                 <TableCell align="center">{feedback.support}</TableCell>
                                 <TableCell align="center">{feedback.comments}</TableCell>
-                                <TableCell align="right"><button onClick={() => deleteButton(feedback)}>Delete</button></TableCell>
+                                <TableCell align="right"><button className="deleteBtn" onClick={() => deleteButton(feedback)}>Delete</button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
