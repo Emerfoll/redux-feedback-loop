@@ -1,7 +1,9 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-
+import { Button } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 function Feeling(params) {
 
@@ -19,16 +21,20 @@ function Feeling(params) {
 
     return (
         <>
-            <h1>Feeling</h1>
+            <h1>How are you feeling today?</h1>
             <form onSubmit={nextSection}>
-                <input
-                    required
+                <TextField
+                    id="standard-number"
+                    label="1 - 10"
                     type="number"
-                    placeholder="Feedback"
                     onChange={(event) => setFeeling(event.target.value)}
                     value={feeling}
                 />
-                <button type="submit">Next</button>
+                <button
+                    type="submit"
+                    variant="contained"
+                    className="nextBtn"
+                >Next</button>
             </form>
         </>
     )

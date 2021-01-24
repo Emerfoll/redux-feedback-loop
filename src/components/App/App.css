@@ -21,3 +21,21 @@
 h4 {
   font-style: italic;
 }
+
+.nextBtn {
+  display: block;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, 35%);
+  color: aliceblue;
+  background-color: blueviolet;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 9px;
+  
+}

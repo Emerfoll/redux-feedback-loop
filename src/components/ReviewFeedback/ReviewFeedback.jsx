@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-
+import { Button } from '@material-ui/core';
 
 
 
@@ -62,7 +62,12 @@ function ReviewFeedback(params) {
             <p>Support: {review[2]}</p>
             <p>Comments: {review[3]}</p>
 
-            <button onClick={submitFeedback}>Submit Feedback</button>
+            <button 
+                type="submit" 
+                variant="contained" 
+                className="nextBtn"
+                onClick={submitFeedback}
+                >Submit Feedback</button>
         </>
     )
 }
